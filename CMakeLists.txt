@@ -1,4 +1,4 @@
-project(tomatelo-router)
+project(tomatelo-routing-machine)
 
 cmake_minimum_required(VERSION 3.1.0 FATAL_ERROR)
 
@@ -9,10 +9,10 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 find_package(LibOSRM REQUIRED)
 
-add_executable(tomatelo-router src/main.cpp)
+add_executable(tomatelo-routing-machine src/main.cpp)
 
 include_directories(SYSTEM ${LibOSRM_INCLUDE_DIRS})
 link_directories(${LibOSRM_LIBRARY_DIRS})
-target_link_libraries(tomatelo-router ${LibOSRM_LIBRARIES} ${LibOSRM_DEPENDENT_LIBRARIES})
+target_link_libraries(tomatelo-routing-machine ${LibOSRM_LIBRARIES} ${LibOSRM_DEPENDENT_LIBRARIES})
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${LibOSRM_CXXFLAGS}")
