@@ -19,9 +19,13 @@ int main(int argc, char** argv) {
     string line;
     
     while (getline(file, line)) {
-        auto a = split(line, ',');
-        coordinates.push_back({util::FloatLongitude{stof(a[0])}, util::FloatLatitude{stof(a[1])}});
-        timestamps.push_back(stol(a[2]));
+        try {
+            auto a = split(line, ' ');
+            coordinates.push_back({util::FloatLongitude{stof(a[2])}, util::FloatLatitude{stof(a[1])}});
+            timestamps.push_back(stol(a[0]) / 1000);
+        }
+        catch (...) {
+        }
     }
 
     try {
