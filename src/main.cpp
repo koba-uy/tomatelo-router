@@ -28,13 +28,8 @@ int main(int argc, char** argv) {
         }
     }
 
-    try {
-        auto router = Router();
-        auto response = router.match(coordinates, timestamps);
-        for (auto match : response) cout << match << endl;
-    }
-    catch (exception ex) {
-        cout << ex.what();
-    }
+    auto router = Router();
+    auto response = router.match(coordinates, timestamps);
+    for (auto match : response) cout << match << endl;
 
 }
