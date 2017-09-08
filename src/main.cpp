@@ -28,7 +28,9 @@ int main(int argc, char** argv) {
         }
     }
 
-    auto router = Router();
+    auto argv0 = string(argv[0]);
+    auto path = argv0.substr(0, argv0.find_last_of("\\/"));
+    auto router = Router(path);
     auto response = router.match(coordinates, timestamps);
     for (auto match : response) cout << match << endl;
 

@@ -22,9 +22,9 @@ private:
 
 public:
 
-    Router() {
+    Router(const string& osrmFolderPath) {
         // Configure based on a .osrm base path, and no datasets in shared mem from osrm-datastore
-        config.storage_config = {"data/osrm/uruguay/uruguay-latest.osrm"};
+        config.storage_config = { osrmFolderPath + "/../data/osrm/uruguay/uruguay-latest.osrm" };
         config.use_shared_memory = false;
     }
 
